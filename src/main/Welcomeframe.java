@@ -33,7 +33,7 @@ public class Welcomeframe extends JFrame {
 		setIconImage(new ImageIcon(this.getClass().getResource("/main/logo/logo.png")).getImage());
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(204, 51, 102));
+		panel.setBackground(new Color(204, 255, 51));
 		panel.setBounds(0, 306, 766, 81);
 		getContentPane().add(panel);
 		
