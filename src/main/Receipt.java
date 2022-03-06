@@ -37,7 +37,7 @@ public class Receipt extends JFrame {
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Receipt.class.getResource("/main/logo/logo.png")));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 956, 673);
+		setBounds(100, 100, 956, 795);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(230, 184, 156));
 		setContentPane(contentPane);
@@ -81,23 +81,23 @@ public class Receipt extends JFrame {
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_4)
 					.addGap(626)
 					.addComponent(lblNewLabel_4_2, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addContainerGap(30, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(621, Short.MAX_VALUE))
+					.addContainerGap(641, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 						.addComponent(custpaiddisplay, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(balancedisp, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
-					.addContainerGap(312, Short.MAX_VALUE))
+					.addContainerGap(332, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 548, GroupLayout.PREFERRED_SIZE)
 					.addGap(10)
@@ -115,10 +115,10 @@ public class Receipt extends JFrame {
 						.addComponent(lblNewLabel_4_2, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2, 0, 0, Short.MAX_VALUE))
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -159,8 +159,8 @@ public class Receipt extends JFrame {
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel_2.createSequentialGroup()
 							.addComponent(lblNewLabel_1_2)
 							.addPreferredGap(ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
 							.addComponent(orderdatedisplay, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
@@ -168,7 +168,7 @@ public class Receipt extends JFrame {
 							.addComponent(lblNewLabel_1_2_1, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
 							.addComponent(orderiddisplay, GroupLayout.PREFERRED_SIZE, 211, GroupLayout.PREFERRED_SIZE))
-						.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+						.addGroup(gl_panel_2.createSequentialGroup()
 							.addComponent(lblNewLabel_1_2_2, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
 							.addComponent(paymenttypedisplay, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)))
@@ -185,11 +185,11 @@ public class Receipt extends JFrame {
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_1_2_1)
 						.addComponent(orderiddisplay, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
 						.addComponent(paymenttypedisplay, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_1_2_2))
-					.addContainerGap(100, Short.MAX_VALUE))
+					.addContainerGap(80, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		
@@ -224,6 +224,19 @@ public class Receipt extends JFrame {
 		JLabel namedisplay = new JLabel(customerdata.get(0).getname());
 		namedisplay.setForeground(Color.BLACK);
 		namedisplay.setFont(new Font("SansSerif", Font.PLAIN, 14));
+		
+		JLabel lblNewLabel_2_2_1 = new JLabel("Regular customer:");
+		lblNewLabel_2_2_1.setForeground(Color.BLACK);
+		lblNewLabel_2_2_1.setFont(new Font("SansSerif", Font.PLAIN, 16));
+		
+		String regularcuststate = "No";
+		if(customerdata.get(0).getregularcustomer()) {
+			regularcuststate = "Yes";
+		}
+		
+		JLabel displayregularcust = new JLabel(regularcuststate);
+		displayregularcust.setForeground(Color.BLACK);
+		displayregularcust.setFont(new Font("SansSerif", Font.PLAIN, 14));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -231,12 +244,12 @@ public class Receipt extends JFrame {
 					.addContainerGap()
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_2_1, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+							.addComponent(lblNewLabel_2_1, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(addressdisplay, GroupLayout.PREFERRED_SIZE, 455, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_panel_1.createSequentialGroup()
 							.addComponent(lblNewLabel_2_2)
-							.addGap(18)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(lblGendeDisp, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_panel_1.createSequentialGroup()
 							.addComponent(lblNewLabel_2)
@@ -244,8 +257,12 @@ public class Receipt extends JFrame {
 							.addComponent(phonenodisplay, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_panel_1.createSequentialGroup()
 							.addComponent(lblNewLabel_1)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(namedisplay, GroupLayout.PREFERRED_SIZE, 333, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(namedisplay, GroupLayout.PREFERRED_SIZE, 333, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addComponent(lblNewLabel_2_2_1, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(displayregularcust, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		gl_panel_1.setVerticalGroup(
@@ -260,14 +277,18 @@ public class Receipt extends JFrame {
 						.addComponent(lblNewLabel_2)
 						.addComponent(phonenodisplay))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblGendeDisp, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2_2))
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_2_2)
+						.addComponent(lblGendeDisp, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 						.addComponent(addressdisplay, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_2_1))
-					.addContainerGap(10, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+						.addComponent(lblNewLabel_2_2_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(displayregularcust, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
 		);
 		panel_1.setLayout(gl_panel_1);
 		
@@ -293,11 +314,6 @@ public class Receipt extends JFrame {
 		table.getColumnModel().getColumn(1).setPreferredWidth(150);
 		table.getColumnModel().getColumn(2).setPreferredWidth(62);
 		scrollPane.setViewportView(table);
-		
-		String regularcuststate = "No";
-		if(customerdata.get(0).getregularcustomer()) {
-			regularcuststate = "Yes";
-		}
 
 		JLabel lblNewLabel = new JLabel("Receipt for Order ID " + orderid);
 		lblNewLabel.setForeground(Color.WHITE);
