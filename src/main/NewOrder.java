@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
@@ -53,6 +54,10 @@ public class NewOrder extends JFrame {
 		listpricecust = totalprice;
 		finalprice = totalprice;
 	}
+	
+	private boolean containsOrderId(final String orderid) {
+		return Main.getcustomer().stream().filter(cust -> cust.getorderid().equals(orderid)).findFirst().isPresent();
+	}
 
 	public NewOrder(String orderid) throws IOException {
 		ItemSelector itemselector = new ItemSelector(orderid);
@@ -74,6 +79,10 @@ public class NewOrder extends JFrame {
 					Main.getorders().removeIf(Orders -> Orders.getorderid().equals(orderid));
 					Main.getitems().removeIf(Items -> Items.getorderid().equals(orderid));
 					Main.getcustomer().removeIf(Customer -> Customer.getorderid().equals(orderid));
+					if(paymentframe != null) {						
+						paymentframe.dispose();
+						paymentframe = null;
+					}
 					dispose();
 					System.out.println("ORDER DELETED");
 				}
@@ -281,13 +290,11 @@ public class NewOrder extends JFrame {
 
 				// IF TRUE, SAVE THE RECORD
 				if (process == true) {
-					// System.out.println("Name: " + customername + "\nPhone no: " + phoneno +
-					// "\nAddress: " + address + "\nGender: " + gender + "Regular customer: " +
-					// regularcustomer);
-					Main.getcustomer().add(new Customerclass(orderid, customername, phoneno, address, gender, regularcustomer));
-					Cashierframe.getbuttoncreate().setEnabled(true);
-					// orderlistrefresh();
-					// dispose();
+					boolean duplicateorderid = containsOrderId(orderid);
+					if (duplicateorderid) {
+					} else {						
+						Main.getcustomer().add(new Customerclass(orderid, customername, phoneno, address, gender, regularcustomer));
+					}
 					if(paymentframe == null) {						
 						paymentframe = new Payment(orderid, finalprice);
 						paymentframe.setVisible(true);
