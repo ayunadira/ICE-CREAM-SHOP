@@ -1,3 +1,5 @@
-Coffee latte,30
-Choco Nice,20
-Berry Stroke,10
+Mint Chocolate Chip,8.50
+Very Berry Strawberry,10
+Love Potion,6.50
+Vanilala,5.00
+Cookies N Cream,5.50

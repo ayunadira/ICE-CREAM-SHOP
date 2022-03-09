@@ -46,7 +46,7 @@ public class Payment extends JFrame {
 		        if(PromptResult==JOptionPane.YES_OPTION)
 		        {
 		            dispose();
-		            //NewOrder.getbuttonpay().setEnabled(true);
+		            NewOrder.setpaymentframenull();
 		        }
 			}
 		});

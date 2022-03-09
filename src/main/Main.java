@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class Main {
 	static ArrayList<Customerclass> customers = new ArrayList<Customerclass>();
@@ -10,8 +11,8 @@ public class Main {
 	
 	//CONFIGURATION
 	static private double discount = 0.20;
-	static private String appname = "Bakery Shop";
-	static private String contributor = "Amirul Asri, Harris Irfan, Sholihin Ilias, Aliff Redzuan, Mifzal Dini";
+	static private String appname = "ICE CREAM SHOP";
+	static private String contributor = "alia sofea,aisyah,siti umairah,ayu nadira";
 	
 	static public String getappname() {
 		return appname;
@@ -47,6 +48,8 @@ public class Main {
 
 		try {
 			welcomeframe = new Welcomeframe();
+			welcomeframe.getContentPane().setBackground(new Color(255, 182, 193));
+			welcomeframe.getContentPane().setForeground(new Color(245, 222, 179));
 			cashier = new Cashierframe();
 
 			welcomeframe.setVisible(true);

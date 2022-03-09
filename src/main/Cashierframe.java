@@ -120,7 +120,7 @@ public class Cashierframe extends JFrame {
 			java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 993, 511);
+		setBounds(100, 100, 993, 499);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -189,7 +189,8 @@ public class Cashierframe extends JFrame {
 		mntmNewMenuItem_2.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/about.png")));
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(70, 18, 32));
+		contentPane.setForeground(new Color(221, 160, 221));
+		contentPane.setBackground(new Color(147, 112, 219));
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 
