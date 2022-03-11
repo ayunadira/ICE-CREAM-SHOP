@@ -55,20 +55,21 @@ public class ItemSelector extends JFrame {
 	 */
 
 	public ItemSelector(final String orderid) throws IOException {
+		setBackground(new Color(128, 0, 128));
 		this.orderid = orderid;
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ItemSelector.class.getResource("/main/logo/logo.png")));
 		setTitle("ICE CREAM SHOP");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 783, 539);
+		setBounds(100, 100, 959, 539);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 218, 185));
+		contentPane.setBackground(new Color(255, 192, 203));
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.PINK);
+		panel.setBackground(new Color(186, 85, 211));
 
 		JScrollPane scrollPane = new JScrollPane();
 
@@ -104,9 +105,10 @@ public class ItemSelector extends JFrame {
 		Double[] priceperitemArray = priceperitem.toArray(new Double[] {});
 		
 		JComboBox itemcombobox = new JComboBox(itemlistArray);
-		itemcombobox.setFont(new Font("Malgun Gothic", Font.PLAIN, 19));
+		itemcombobox.setFont(new Font("Malgun Gothic", Font.PLAIN, 12));
 
 		JSpinner quantity = new JSpinner();
+		quantity.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		quantity.setModel(new SpinnerNumberModel(1, 1, null, 1));
 		
 
@@ -175,6 +177,7 @@ public class ItemSelector extends JFrame {
 		});
 		
 		deletenumberfield = new JTextField();
+		deletenumberfield.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		deletenumberfield.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Item Number");
@@ -207,18 +210,10 @@ public class ItemSelector extends JFrame {
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(608)
-					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(66, Short.MAX_VALUE))
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addGap(10)
-							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
-							.addGap(19))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblNewLabel_3)
@@ -226,23 +221,32 @@ public class ItemSelector extends JFrame {
 									.addGap(15)
 									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)))
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(itemcombobox, Alignment.LEADING, 0, 149, Short.MAX_VALUE)
-								.addComponent(deletenumberfield, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(btnNewButton_2)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-							.addGap(71)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(deletenumberfield)
+								.addComponent(itemcombobox, 0, 206, Short.MAX_VALUE))
+							.addGap(26)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnNewButton_2))
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(153)
 									.addComponent(lblNewLabel_1)
-									.addGap(18)
-									.addComponent(quantity, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-									.addGap(114))
+									.addPreferredGap(ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+									.addComponent(quantity, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
+									.addGap(57))
 								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(144)
 									.addComponent(totalpricedisplay)
-									.addContainerGap())))))
+									.addContainerGap())))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(10)
+									.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)))
+							.addGap(19))))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -254,22 +258,22 @@ public class ItemSelector extends JFrame {
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel)
 								.addComponent(itemcombobox, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1)
 								.addComponent(quantity, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_1)
 								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(totalpricedisplay))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(45)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
 								.addComponent(deletenumberfield, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_3))))
+								.addComponent(lblNewLabel_3)
+								.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))))
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 294, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addGap(8))
 		);
 
 		table = new JTable();
@@ -305,10 +309,10 @@ public class ItemSelector extends JFrame {
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap(146, Short.MAX_VALUE)
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGap(104)
 					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 478, GroupLayout.PREFERRED_SIZE)
-					.addGap(145))
+					.addContainerGap(363, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
