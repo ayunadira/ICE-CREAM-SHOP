@@ -200,6 +200,12 @@ public class Payment extends JFrame {
 					receiptframe.setVisible(true);
 					Cashierframe.getorderframe().dispose();
 					Cashierframe.showdata();
+					NewOrder.listpricecust = 0;
+					NewOrder.finalprice = 0;
+					NewOrder.regularcustomer = false;
+					
+					
+					
 					dispose();
 				}
 			}

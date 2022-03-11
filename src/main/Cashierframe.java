@@ -45,6 +45,10 @@ public class Cashierframe extends JFrame {
 
 	static DecimalFormat priceformatter = new DecimalFormat("#0.00");
 	static private String orderidmain = null;
+    
+	public static void setorderframenull() {
+		orderframe = null;
+	}
 
 	public static void showdata() {
 		listordermodel.setRowCount(0);
