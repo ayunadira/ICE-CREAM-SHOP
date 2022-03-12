@@ -55,13 +55,13 @@ public class ItemSelector extends JFrame {
 	 */
 
 	public ItemSelector(final String orderid) throws IOException {
-		setBackground(new Color(128, 0, 128));
+		setBackground(new Color(250, 128, 114));
 		this.orderid = orderid;
 		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(ItemSelector.class.getResource("/main/logo/logo.png")));
 		setTitle("ICE CREAM SHOP");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 959, 539);
+		setBounds(100, 100, 1176, 539);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 192, 203));
 		contentPane.setBorder(null);
@@ -69,7 +69,7 @@ public class ItemSelector extends JFrame {
 		setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(186, 85, 211));
+		panel.setBackground(new Color(199, 21, 133));
 
 		JScrollPane scrollPane = new JScrollPane();
 
@@ -156,14 +156,14 @@ public class ItemSelector extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Items");
 		lblNewLabel.setForeground(new Color(139, 0, 0));
-		lblNewLabel.setFont(new Font("Lucida Bright", Font.BOLD, 14));
+		lblNewLabel.setFont(new Font("Lucida Bright", Font.BOLD, 16));
 		
 		JLabel lblNewLabel_1 = new JLabel("Quantity");
 		lblNewLabel_1.setForeground(new Color(139, 0, 0));
-		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 14));
+		lblNewLabel_1.setFont(new Font("Lucida Bright", Font.BOLD, 16));
 		
 		JButton btnNewButton_1 = new JButton("Save");
-		btnNewButton_1.setFont(new Font("Lucida Bright", Font.BOLD, 10));
+		btnNewButton_1.setFont(new Font("Lucida Bright", Font.BOLD, 16));
 		btnNewButton_1.setForeground(new Color(139, 0, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -182,7 +182,7 @@ public class ItemSelector extends JFrame {
 		
 		JLabel lblNewLabel_3 = new JLabel("Item Number");
 		lblNewLabel_3.setForeground(new Color(139, 0, 0));
-		lblNewLabel_3.setFont(new Font("Lucida Bright", Font.BOLD, 14));
+		lblNewLabel_3.setFont(new Font("Lucida Bright", Font.BOLD, 16));
 		
 		JButton btnNewButton_2 = new JButton("Delete");
 		btnNewButton_2.setForeground(new Color(139, 0, 0));
@@ -206,11 +206,10 @@ public class ItemSelector extends JFrame {
 		
 		totalpricedisplay = new JLabel("Total Price: RM 0");
 		totalpricedisplay.setForeground(new Color(139, 0, 0));
-		totalpricedisplay.setFont(new Font("Lucida Bright", Font.BOLD, 15));
+		totalpricedisplay.setFont(new Font("Lucida Bright", Font.BOLD, 16));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -220,55 +219,58 @@ public class ItemSelector extends JFrame {
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGap(15)
 									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(deletenumberfield)
-								.addComponent(itemcombobox, 0, 206, Short.MAX_VALUE))
-							.addGap(26)
+							.addGap(65)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(deletenumberfield, GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+								.addComponent(itemcombobox, 0, 261, Short.MAX_VALUE))
+							.addGap(18)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
 								.addComponent(btnNewButton_2))
-							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGap(121)
+							.addComponent(lblNewLabel_1)
+							.addGap(18)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(153)
-									.addComponent(lblNewLabel_1)
-									.addPreferredGap(ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-									.addComponent(quantity, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
-									.addGap(57))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(144)
-									.addComponent(totalpricedisplay)
-									.addContainerGap())))
+								.addComponent(quantity, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
+								.addComponent(totalpricedisplay, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE))
+							.addGap(194))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGap(10)
-									.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)))
+									.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE)))
 							.addGap(19))))
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 1162, Short.MAX_VALUE)
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-					.addGap(13)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+							.addGap(13)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblNewLabel)
-								.addComponent(itemcombobox, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-								.addComponent(quantity, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_1)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(totalpricedisplay))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+										.addComponent(itemcombobox, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblNewLabel_1)))))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(45)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(deletenumberfield, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_3)
-								.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(quantity, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(deletenumberfield, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(6)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+									.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
+									.addComponent(totalpricedisplay))
+								.addComponent(lblNewLabel_3))))
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 294, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -304,22 +306,22 @@ public class ItemSelector extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("Items for order ID: " + orderid);
 
 		lblNewLabel_2.setIcon(new ImageIcon(ItemSelector.class.getResource("/main/logo/contract.png")));
-		lblNewLabel_2.setForeground(new Color(139, 0, 0));
-		lblNewLabel_2.setFont(new Font("Verdana", Font.BOLD, 20));
+		lblNewLabel_2.setForeground(new Color(253, 245, 230));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 27));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
-					.addGap(104)
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap(355, Short.MAX_VALUE)
 					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 478, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(363, Short.MAX_VALUE))
+					.addGap(329))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(20)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap(21, Short.MAX_VALUE)
 					.addComponent(lblNewLabel_2)
-					.addContainerGap(21, Short.MAX_VALUE))
+					.addGap(19))
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
