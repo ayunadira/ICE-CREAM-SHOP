@@ -306,22 +306,22 @@ public class ItemSelector extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("Items for order ID: " + orderid);
 
 		lblNewLabel_2.setIcon(new ImageIcon(ItemSelector.class.getResource("/main/logo/contract.png")));
-		lblNewLabel_2.setForeground(new Color(253, 245, 230));
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 27));
+		lblNewLabel_2.setForeground(new Color(255, 218, 185));
+		lblNewLabel_2.setFont(new Font("Goudy Stout", Font.PLAIN, 25));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-					.addContainerGap(355, Short.MAX_VALUE)
-					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 478, GroupLayout.PREFERRED_SIZE)
-					.addGap(329))
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGap(99)
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 755, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(308, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-					.addContainerGap(21, Short.MAX_VALUE)
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap(25, Short.MAX_VALUE)
 					.addComponent(lblNewLabel_2)
-					.addGap(19))
+					.addContainerGap())
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
