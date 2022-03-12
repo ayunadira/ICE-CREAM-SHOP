@@ -39,7 +39,7 @@ public class Receipt extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 956, 795);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 218, 185));
+		contentPane.setBackground(new Color(255, 222, 173));
 		setContentPane(contentPane);
 		setTitle(Main.getappname());
 		setLocationRelativeTo(null);
@@ -61,14 +61,17 @@ public class Receipt extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		
 		JLabel lblNewLabel_4_1 = new JLabel("Total: RM" + priceformatter.format(paymentdata.get(0).gettotalprice()));
+		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel_4_1.setForeground(Color.BLACK);
 		lblNewLabel_4_1.setFont(new Font("Century", Font.BOLD, 18));
 		lblNewLabel_4_1.setBackground(Color.WHITE);
 		
 		JLabel custpaiddisplay = new JLabel("Customer paid: RM" + priceformatter.format(paymentdata.get(0).getcustpay()));
+		custpaiddisplay.setHorizontalAlignment(SwingConstants.RIGHT);
 		custpaiddisplay.setFont(new Font("Century", Font.PLAIN, 14));
 		
 		JLabel balancedisp = new JLabel("Balance: RM" + priceformatter.format(paymentdata.get(0).getcustpay() - paymentdata.get(0).gettotalprice()));
+		balancedisp.setHorizontalAlignment(SwingConstants.RIGHT);
 		balancedisp.setFont(new Font("Century", Font.PLAIN, 14));
 		
 		String addressline = "<html>" + customerdata.get(0).getaddress().replaceAll("<","&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br/>") + "</html>";
@@ -80,52 +83,32 @@ public class Receipt extends JFrame {
 		panel_2.setOpaque(false);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-<<<<<<< HEAD
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
->>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_4)
 					.addGap(626)
 					.addComponent(lblNewLabel_4_2, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
 					.addContainerGap(19, Short.MAX_VALUE))
-=======
-					.addContainerGap(29, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(643, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(custpaiddisplay, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(balancedisp, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
-					.addContainerGap(334, Short.MAX_VALUE))
->>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 548, GroupLayout.PREFERRED_SIZE)
 					.addGap(10)
 					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 362, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
-<<<<<<< HEAD
 				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(731, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(balancedisp, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
-						.addComponent(custpaiddisplay, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(334, Short.MAX_VALUE)
+					.addComponent(balancedisp, GroupLayout.PREFERRED_SIZE, 598, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
-=======
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE))
->>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap(724, Short.MAX_VALUE)
+					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 208, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap(706, Short.MAX_VALUE)
+					.addComponent(custpaiddisplay, GroupLayout.PREFERRED_SIZE, 226, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -139,20 +122,15 @@ public class Receipt extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
-<<<<<<< HEAD
-					.addPreferredGap(ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 291, GroupLayout.PREFERRED_SIZE)
-=======
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
->>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addPreferredGap(ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 313, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addGap(2)
 					.addComponent(custpaiddisplay)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(balancedisp, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
-					.addGap(14))
+					.addContainerGap())
 		);
 		
 		JLabel lblNewLabel_1_2_2 = new JLabel("Payment Type:");
@@ -188,8 +166,8 @@ public class Receipt extends JFrame {
 					.addContainerGap()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addComponent(lblNewLabel_1_2_2, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+							.addComponent(lblNewLabel_1_2_2, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
 							.addComponent(paymenttypedisplay, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
 						.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
 							.addGroup(gl_panel_2.createParallelGroup(Alignment.TRAILING, false)
@@ -221,40 +199,49 @@ public class Receipt extends JFrame {
 		panel_2.setLayout(gl_panel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Address:");
+		lblNewLabel_2_1.setBounds(10, 94, 77, 19);
 		lblNewLabel_2_1.setForeground(Color.BLACK);
 		lblNewLabel_2_1.setFont(new Font("Courier New", Font.PLAIN, 16));
 		JLabel addressdisplay = new JLabel(addressline);
+		addressdisplay.setBounds(93, 94, 455, 70);
 		addressdisplay.setVerticalAlignment(SwingConstants.TOP);
 		addressdisplay.setForeground(Color.BLACK);
 		addressdisplay.setFont(new Font("Courier New", Font.PLAIN, 14));
 		
 		JLabel lblNewLabel_2_2 = new JLabel("Gender:");
+		lblNewLabel_2_2.setBounds(10, 66, 108, 21);
 		lblNewLabel_2_2.setForeground(Color.BLACK);
 		lblNewLabel_2_2.setFont(new Font("Courier New", Font.PLAIN, 16));
 		
 		JLabel lblGendeDisp = new JLabel(customerdata.get(0).getgender());
+		lblGendeDisp.setBounds(93, 63, 207, 21);
 		lblGendeDisp.setForeground(Color.BLACK);
 		lblGendeDisp.setFont(new Font("Courier New", Font.PLAIN, 14));
 		
 				JLabel lblNewLabel_2 = new JLabel("Phone Number:");
+				lblNewLabel_2.setBounds(10, 39, 139, 21);
 				lblNewLabel_2.setForeground(Color.BLACK);
 				lblNewLabel_2.setFont(new Font("Courier New", Font.PLAIN, 16));
 		
 		JLabel phonenodisplay = new JLabel(customerdata.get(0).getphoneno());
+		phonenodisplay.setBounds(153, 39, 207, 19);
 		phonenodisplay.setForeground(Color.BLACK);
 		phonenodisplay.setFont(new Font("Courier New", Font.PLAIN, 14));
 		
 				JLabel lblNewLabel_1 = new JLabel("Name:");
+				lblNewLabel_1.setBounds(10, 12, 60, 21);
 				lblNewLabel_1.setForeground(Color.BLACK);
 				lblNewLabel_1.setFont(new Font("Courier New", Font.PLAIN, 16));
 		
 		JLabel namedisplay = new JLabel(customerdata.get(0).getname());
+		namedisplay.setBounds(68, 14, 333, 19);
 		namedisplay.setForeground(Color.BLACK);
 		namedisplay.setFont(new Font("Courier New", Font.PLAIN, 14));
 		
 		JLabel lblNewLabel_2_2_1 = new JLabel("Regular customer:");
+		lblNewLabel_2_2_1.setBounds(10, 174, 174, 21);
 		lblNewLabel_2_2_1.setForeground(Color.BLACK);
-		lblNewLabel_2_2_1.setFont(new Font("Courier New", Font.PLAIN, 13));
+		lblNewLabel_2_2_1.setFont(new Font("Courier New", Font.PLAIN, 16));
 		
 		String regularcuststate = "No";
 		if(customerdata.get(0).getregularcustomer()) {
@@ -262,62 +249,20 @@ public class Receipt extends JFrame {
 		}
 		
 		JLabel displayregularcust = new JLabel(regularcuststate);
+		displayregularcust.setBounds(194, 173, 207, 21);
 		displayregularcust.setForeground(Color.BLACK);
-		displayregularcust.setFont(new Font("Courier New", Font.PLAIN, 14));
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_2_1, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(addressdisplay, GroupLayout.PREFERRED_SIZE, 455, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_2_2)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblGendeDisp, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_2)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(phonenodisplay, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_1)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(namedisplay, GroupLayout.PREFERRED_SIZE, 333, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_2_2_1, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(displayregularcust, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap())
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(12)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(namedisplay))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_2)
-						.addComponent(phonenodisplay))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_2_2)
-						.addComponent(lblGendeDisp, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addComponent(addressdisplay, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2_1))
-					.addPreferredGap(ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblNewLabel_2_2_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addComponent(displayregularcust, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap())
-		);
-		panel_1.setLayout(gl_panel_1);
+		displayregularcust.setFont(new Font("SansSerif", Font.PLAIN, 14));
+		panel_1.setLayout(null);
+		panel_1.add(lblNewLabel_2_1);
+		panel_1.add(addressdisplay);
+		panel_1.add(lblNewLabel_2_2);
+		panel_1.add(lblGendeDisp);
+		panel_1.add(lblNewLabel_2);
+		panel_1.add(phonenodisplay);
+		panel_1.add(lblNewLabel_1);
+		panel_1.add(namedisplay);
+		panel_1.add(lblNewLabel_2_2_1);
+		panel_1.add(displayregularcust);
 		
 		table = new JTable();
 		DefaultTableModel listitemmodel = new DefaultTableModel(
@@ -348,18 +293,18 @@ public class Receipt extends JFrame {
 		lblNewLabel.setFont(new Font("Century", Font.PLAIN, 17));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap(292, Short.MAX_VALUE)
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap(276, Short.MAX_VALUE)
 					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 475, GroupLayout.PREFERRED_SIZE)
-					.addGap(175))
+					.addGap(191))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(18)
+					.addContainerGap()
 					.addComponent(lblNewLabel)
-					.addContainerGap(18, Short.MAX_VALUE))
+					.addContainerGap(26, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
