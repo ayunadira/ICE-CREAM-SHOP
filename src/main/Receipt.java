@@ -80,19 +80,39 @@ public class Receipt extends JFrame {
 		panel_2.setOpaque(false);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
+<<<<<<< HEAD
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
+>>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_4)
 					.addGap(626)
 					.addComponent(lblNewLabel_4_2, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
 					.addContainerGap(19, Short.MAX_VALUE))
+=======
+					.addContainerGap(29, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(643, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(custpaiddisplay, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(balancedisp, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
+					.addContainerGap(334, Short.MAX_VALUE))
+>>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 548, GroupLayout.PREFERRED_SIZE)
 					.addGap(10)
 					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 362, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
+<<<<<<< HEAD
 				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(731, Short.MAX_VALUE)
@@ -101,6 +121,11 @@ public class Receipt extends JFrame {
 						.addComponent(custpaiddisplay, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
+=======
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE))
+>>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -114,8 +139,13 @@ public class Receipt extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
+<<<<<<< HEAD
 					.addPreferredGap(ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
 					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 291, GroupLayout.PREFERRED_SIZE)
+=======
+					.addGap(18)
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+>>>>>>> 32735d2cbed40f4251a425e451c25a400234adaa
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_4_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addGap(2)

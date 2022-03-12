@@ -46,7 +46,7 @@ public class Payment extends JFrame {
 		        if(PromptResult==JOptionPane.YES_OPTION)
 		        {
 		            dispose();
-		            //NewOrder.getbuttonpay().setEnabled(true);
+		            NewOrder.setpaymentframenull();
 		        }
 			}
 		});
@@ -200,6 +200,12 @@ public class Payment extends JFrame {
 					receiptframe.setVisible(true);
 					Cashierframe.getorderframe().dispose();
 					Cashierframe.showdata();
+					NewOrder.listpricecust = 0;
+					NewOrder.finalprice = 0;
+					NewOrder.regularcustomer = false;
+					
+					
+					
 					dispose();
 				}
 			}
@@ -276,9 +282,9 @@ public class Payment extends JFrame {
 							.addComponent(cashtype)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(debittype)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGap(18)
 							.addComponent(creditcardtype)))
-					.addContainerGap(527, Short.MAX_VALUE))
+					.addContainerGap(607, Short.MAX_VALUE))
 		);
 		gl_panel_1.setVerticalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -289,8 +295,8 @@ public class Payment extends JFrame {
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 						.addComponent(cashtype)
 						.addComponent(debittype)
-						.addComponent(creditcardtype))
-					.addContainerGap(12, Short.MAX_VALUE))
+						.addComponent(creditcardtype, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(17, Short.MAX_VALUE))
 		);
 		panel_1.setLayout(gl_panel_1);
 		contentPane.setLayout(gl_contentPane);

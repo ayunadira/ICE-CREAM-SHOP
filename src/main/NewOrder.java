@@ -38,12 +38,13 @@ public class NewOrder extends JFrame {
 	private JPanel contentPane;
 	public JLabel lblNewLabel_2;
 
-	static private double listpricecust = 0;
-	static private double finalprice = 0;
+	static double listpricecust = 0;
+	static double finalprice = 0;
 	static private JLabel titletotalprice;
 	static private JLabel totalpricedisplay;
-	Payment paymentframe = null;
-
+	static Payment paymentframe = null;
+     
+	static boolean regularcustomer = false;
 	/**
 	 * Create the frame.
 	 * 
@@ -52,11 +53,22 @@ public class NewOrder extends JFrame {
 	static public void calctotalprice(double totalprice) {
 		totalpricedisplay.setText("RM " + priceformatter.format(totalprice));
 		listpricecust = totalprice;
+		if(regularcustomer == true) {
+			totalprice = totalprice - (totalprice*Main.getdiscountvalue());
+		}
+		totalpricedisplay.setText("RM " + priceformatter.format(totalprice));
+		
+		
+		
 		finalprice = totalprice;
 	}
 	
 	private boolean containsOrderId(final String orderid) {
 		return Main.getcustomer().stream().filter(cust -> cust.getorderid().equals(orderid)).findFirst().isPresent();
+	}
+	
+	static public void setpaymentframenull() {
+		paymentframe = null;
 	}
 
 	public NewOrder(String orderid) throws IOException {
@@ -83,6 +95,11 @@ public class NewOrder extends JFrame {
 						paymentframe.dispose();
 						paymentframe = null;
 					}
+					listpricecust = 0;
+					finalprice = 0;
+					regularcustomer = false;
+					Cashierframe.setorderframenull();
+					
 					dispose();
 					System.out.println("ORDER DELETED");
 				}
@@ -110,53 +127,73 @@ public class NewOrder extends JFrame {
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 1023, 587);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(250, 243, 221));
+		contentPane.setBackground(new Color(204, 153, 204));
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(74, 124, 89));
+		panel.setForeground(new Color(0, 0, 0));
+		panel.setBackground(new Color(153, 102, 153));
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(104, 176, 171));
+		panel_1.setBackground(new Color(255, 204, 204));
 
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(200, 213, 185));
+		panel_2.setBackground(new Color(255, 153, 153));
 
 		JLabel lblNewLabel_1 = new JLabel("Customer Name");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
 
 		JLabel lblNewLabel_3 = new JLabel("Phone Number");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_3.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
 
 		JLabel lblNewLabel_4 = new JLabel("Items");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_4.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
 
 		JLabel lblNewLabel = new JLabel("Address");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
 
 		JLabel lblNewLabel_5 = new JLabel("Regular Customer");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_5.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
 
 		JLabel lblNewLabel_6 = new JLabel("Gender");
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_6.setFont(new Font("Copperplate Gothic Bold", Font.PLAIN, 14));
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
-		gl_panel_2.setHorizontalGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup().addContainerGap()
-						.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING).addComponent(lblNewLabel_1)
-								.addGroup(gl_panel_2.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(lblNewLabel_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addComponent(lblNewLabel_5).addComponent(lblNewLabel_4).addComponent(lblNewLabel_6))
-						.addContainerGap(64, Short.MAX_VALUE)));
-		gl_panel_2.setVerticalGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup().addGap(45).addComponent(lblNewLabel_1).addGap(18)
-						.addComponent(lblNewLabel_3).addGap(18).addComponent(lblNewLabel).addGap(62)
-						.addComponent(lblNewLabel_6).addPreferredGap(ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_4).addGap(37).addComponent(lblNewLabel_5).addGap(57)));
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNewLabel_1)
+								.addComponent(lblNewLabel_3)
+								.addComponent(lblNewLabel_5)
+								.addComponent(lblNewLabel_4)
+								.addComponent(lblNewLabel_6))
+							.addContainerGap(64, Short.MAX_VALUE))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(82))))
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addGap(45)
+					.addComponent(lblNewLabel_1)
+					.addGap(18)
+					.addComponent(lblNewLabel_3)
+					.addGap(40)
+					.addComponent(lblNewLabel)
+					.addGap(40)
+					.addComponent(lblNewLabel_6)
+					.addPreferredGap(ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+					.addComponent(lblNewLabel_4)
+					.addGap(37)
+					.addComponent(lblNewLabel_5)
+					.addGap(57))
+		);
 		panel_2.setLayout(gl_panel_2);
 
 		JTextField custnamefield = new JTextField();
@@ -174,6 +211,9 @@ public class NewOrder extends JFrame {
 				boolean regularcustomer = false;
 				if (regularcustomercheck.isSelected()) {
 					regularcustomer = true;
+				}
+				else {
+					regularcustomer = false;
 				}
 
 				if (regularcustomer == true) {
@@ -320,79 +360,114 @@ public class NewOrder extends JFrame {
 		totalpricedisplay.setFont(new Font("SansSerif", Font.BOLD, 19));
 
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(gl_panel_1
-				.createSequentialGroup()
-				.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING).addGroup(gl_panel_1.createSequentialGroup()
-						.addGap(18)
-						.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
-								.addComponent(custnamefield, GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
-								.addComponent(phonenofield, GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
-								.addGroup(gl_panel_1.createSequentialGroup().addComponent(btnNewButton_1).addGap(131)
-										.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-												.addComponent(totalpricedisplay).addComponent(titletotalprice)))
-								.addGroup(gl_panel_1.createSequentialGroup().addComponent(malevalueradio)
-										.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(femalevalueradio))
-								.addComponent(regularcustomercheck)))
-						.addGroup(gl_panel_1.createSequentialGroup().addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 169,
-										GroupLayout.PREFERRED_SIZE)))
-				.addContainerGap()));
-		gl_panel_1
-				.setVerticalGroup(
-						gl_panel_1
-								.createParallelGroup(
-										Alignment.LEADING)
-								.addGroup(gl_panel_1.createSequentialGroup().addGap(42)
-										.addComponent(custnamefield, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addGap(18)
-										.addComponent(phonenofield, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addGap(18)
-										.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 58,
-												GroupLayout.PREFERRED_SIZE)
-										.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(gl_panel_1
-												.createSequentialGroup().addGap(18)
-												.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-														.addComponent(malevalueradio).addComponent(femalevalueradio))
-												.addGap(29).addComponent(btnNewButton_1).addGap(31)
-												.addComponent(regularcustomercheck))
-												.addGroup(gl_panel_1.createSequentialGroup().addGap(52)
-														.addComponent(titletotalprice)
-														.addPreferredGap(ComponentPlacement.RELATED)
-														.addComponent(totalpricedisplay).addGap(50)
-														.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 35,
-																GroupLayout.PREFERRED_SIZE)))
-										.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-								.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
-										Short.MAX_VALUE));
+		gl_panel_1.setHorizontalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 225, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addGap(18)
+									.addComponent(custnamefield, GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addGap(18)
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_panel_1.createSequentialGroup()
+											.addComponent(malevalueradio)
+											.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_panel_1.createSequentialGroup()
+													.addGap(286)
+													.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+														.addComponent(totalpricedisplay)
+														.addComponent(titletotalprice)))
+												.addGroup(gl_panel_1.createSequentialGroup()
+													.addGap(11)
+													.addComponent(femalevalueradio)))
+											.addPreferredGap(ComponentPlacement.RELATED, 275, Short.MAX_VALUE))
+										.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
+										.addComponent(phonenofield, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnNewButton_1)
+										.addComponent(regularcustomercheck))))
+							.addContainerGap())
+						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
+							.addGap(42))))
+		);
+		gl_panel_1.setVerticalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGap(36)
+					.addComponent(custnamefield, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(phonenofield, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE)
+					.addGap(10)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+						.addComponent(malevalueradio)
+						.addComponent(femalevalueradio))
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(31)
+							.addComponent(titletotalprice)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(totalpricedisplay))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(44)
+							.addComponent(btnNewButton_1)))
+					.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+					.addComponent(regularcustomercheck)
+					.addGap(11)
+					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+				.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+		);
 
 		scrollPane.setViewportView(addressfield);
 		panel_1.setLayout(gl_panel_1);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 899, Short.MAX_VALUE).addGap(108)));
-		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(25)
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 938, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE).addGap(39)
-						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 376, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(61, Short.MAX_VALUE)));
+					.addGap(21)
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 394, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(45, Short.MAX_VALUE))
+		);
 
 		lblNewLabel_2 = new JLabel("New order for ID: " + orderid);
+		lblNewLabel_2.setBackground(new Color(255, 255, 204));
 		lblNewLabel_2.setIcon(new ImageIcon(NewOrder.class.getResource("/main/logo/contract.png")));
-		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Comic Sans MS", Font.PLAIN, 17));
+		lblNewLabel_2.setForeground(new Color(255, 255, 204));
+		lblNewLabel_2.setFont(new Font("Goudy Stout", Font.BOLD, 22));
 		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup().addGap(20)
-						.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 808, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(179, Short.MAX_VALUE)));
-		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(gl_panel
-				.createSequentialGroup().addGap(21).addComponent(lblNewLabel_2).addContainerGap(19, Short.MAX_VALUE)));
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap(134, Short.MAX_VALUE)
+					.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 808, GroupLayout.PREFERRED_SIZE)
+					.addGap(57))
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(19)
+					.addComponent(lblNewLabel_2)
+					.addContainerGap(21, Short.MAX_VALUE))
+		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
 	}
