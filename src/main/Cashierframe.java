@@ -129,6 +129,7 @@ public class Cashierframe extends JFrame {
 		setBounds(100, 100, 993, 499);
 
 		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBackground(new Color(255, 255, 255));
 		setJMenuBar(menuBar);
 
 		JMenu mnNewMenu = new JMenu("Order");
@@ -200,7 +201,7 @@ public class Cashierframe extends JFrame {
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(221, 160, 221));
-		contentPane.setBackground(new Color(102, 204, 204));
+		contentPane.setBackground(new Color(153, 204, 255));
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 
@@ -219,7 +220,7 @@ public class Cashierframe extends JFrame {
 		});
 		btnNewButton.setIcon(new ImageIcon(Cashierframe.class.getResource("/main/logo/add.png")));
 		btnNewButton.setFocusable(false);
-		btnNewButton.setBackground(new Color(199, 21, 133));
+		btnNewButton.setBackground(new Color(255, 0, 153));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
