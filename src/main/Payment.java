@@ -106,27 +106,17 @@ public class Payment extends JFrame {
 				.addGroup(gl_panel_2_1.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_2_1.createParallelGroup(Alignment.LEADING)
-<<<<<<< Updated upstream
-						.addComponent(custpayfield, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-						.addComponent(lblNewLabel_1_1, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
-=======
 						.addComponent(lblNewLabel_1_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
 						.addComponent(custpayfield, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
->>>>>>> Stashed changes
 					.addContainerGap())
 		);
 		gl_panel_2_1.setVerticalGroup(
 			gl_panel_2_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2_1.createSequentialGroup()
-					.addGap(14)
+					.addContainerGap()
 					.addComponent(lblNewLabel_1_1)
-<<<<<<< Updated upstream
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(custpayfield, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-=======
 					.addPreferredGap(ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
 					.addComponent(custpayfield, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
->>>>>>> Stashed changes
 					.addContainerGap())
 		);
 		panel_2_1.setLayout(gl_panel_2_1);
@@ -230,20 +220,6 @@ public class Payment extends JFrame {
 				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-<<<<<<< Updated upstream
-					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addContainerGap())
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(panel_2_1, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-					.addGap(50))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(209)
-					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-					.addGap(245))
-=======
 					.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(panel_2_1, GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
@@ -256,23 +232,12 @@ public class Payment extends JFrame {
 					.addGap(359)
 					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(375, Short.MAX_VALUE))
->>>>>>> Stashed changes
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-<<<<<<< Updated upstream
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(panel_2_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(129, Short.MAX_VALUE))
-=======
 					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
@@ -281,7 +246,6 @@ public class Payment extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
 					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
 					.addGap(56))
->>>>>>> Stashed changes
 		);
 		
 		JLabel lblNewLabel_1 = new JLabel("Total");
@@ -296,11 +260,7 @@ public class Payment extends JFrame {
 					.addContainerGap()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-<<<<<<< Updated upstream
-						.addComponent(pricedisplay, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
-=======
 						.addComponent(pricedisplay, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
->>>>>>> Stashed changes
 					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
@@ -322,18 +282,6 @@ public class Payment extends JFrame {
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_1.createSequentialGroup()
-<<<<<<< Updated upstream
-							.addGap(125)
-							.addComponent(cashtype, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
-							.addGap(33)
-							.addComponent(debittype, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-							.addGap(28)
-							.addComponent(creditcardtype, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(271)
-							.addComponent(lblNewLabel)))
-					.addContainerGap(334, Short.MAX_VALUE))
-=======
 							.addGap(257)
 							.addComponent(cashtype, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
 							.addGap(37)
@@ -344,7 +292,6 @@ public class Payment extends JFrame {
 							.addGap(311)
 							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(242, Short.MAX_VALUE))
->>>>>>> Stashed changes
 		);
 		gl_panel_1.setVerticalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -352,15 +299,9 @@ public class Payment extends JFrame {
 					.addComponent(lblNewLabel)
 					.addGap(16)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-<<<<<<< Updated upstream
-						.addComponent(creditcardtype, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-						.addComponent(debittype, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-						.addComponent(cashtype, GroupLayout.PREFERRED_SIZE, 27, GroupLayout.PREFERRED_SIZE))
-=======
 						.addComponent(debittype, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 						.addComponent(creditcardtype, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
 						.addComponent(cashtype, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
->>>>>>> Stashed changes
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_1.setLayout(gl_panel_1);
