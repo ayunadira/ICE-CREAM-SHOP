@@ -200,7 +200,7 @@ public class Cashierframe extends JFrame {
 		mnNewMenu_1.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(221, 160, 221));
-		contentPane.setBackground(new Color(148, 0, 211));
+		contentPane.setBackground(new Color(102, 204, 204));
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 
