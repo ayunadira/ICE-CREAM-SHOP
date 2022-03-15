@@ -27,7 +27,7 @@ public class Welcomeframe extends JFrame {
 		getContentPane().setBackground(new Color(255, 182, 193));
 		setUndecorated(true);
 		setResizable(false);
-		setTitle(Main.getappname());
+		setTitle("ICE CREAM SHOP");
 		setBounds(100, 100, 765, 387);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -81,7 +81,7 @@ public class Welcomeframe extends JFrame {
 		lblNewLabel_2.setForeground(new Color(0, 0, 128));
 		lblNewLabel_2.setFont(new Font("STCaiyun", Font.BOLD, 57));
 		
-				JLabel lblNewLabel = new JLabel("By: " + Main.getcontributor());
+				JLabel lblNewLabel = new JLabel("By: ayu,aliasofea,mairah,aisyah");
 				lblNewLabel.setForeground(new Color(25, 25, 112));
 				lblNewLabel.setFont(new Font("Calibri Light", Font.PLAIN, 20));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);

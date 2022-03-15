@@ -11,17 +11,6 @@ public class Main {
 	
 	//CONFIGURATION
 	static private double discount = 0.20;
-	static private String appname = "ICE CREAM SHOP";
-	static private String contributor = "Modified";
-	
-	static public String getappname() {
-		return appname;
-	}
-	
-	static public String getcontributor() {
-		return contributor;
-	}
-	
 	static public double getdiscountvalue() {
 		return discount;
 	}

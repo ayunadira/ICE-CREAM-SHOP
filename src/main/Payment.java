@@ -51,7 +51,7 @@ public class Payment extends JFrame {
 			}
 		});
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Payment.class.getResource("/main/logo/logo.png")));
-		setTitle(Main.getappname());
+		setTitle("ICE CREAM SHOP");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 844, 479);
 		contentPane = new JPanel();

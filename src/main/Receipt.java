@@ -41,7 +41,7 @@ public class Receipt extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 222, 173));
 		setContentPane(contentPane);
-		setTitle(Main.getappname());
+		setTitle("ICE CREAM SHOP");
 		setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
