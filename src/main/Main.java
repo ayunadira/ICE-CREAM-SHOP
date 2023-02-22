@@ -10,7 +10,7 @@ public class Main {
 	static ArrayList<Paymentclass> listpayment = new ArrayList<Paymentclass>();
 	
 	//CONFIGURATION
-	static private double discount = 0.20;
+	static private double discount = 0.30;
 	static public double getdiscountvalue() {
 		return discount;
 	}
